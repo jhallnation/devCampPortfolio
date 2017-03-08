@@ -6,3 +6,4 @@ class ApplicationController < ActionController::Base
   include CurrentUser
   include DefaultPageContent
 end
+

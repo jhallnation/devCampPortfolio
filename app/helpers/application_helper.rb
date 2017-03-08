@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: 'souce-greeting')
     end
   end
+
+  def copyright_generator
+    JHallViewTool::Renderer.copyright 'Jason Hall', 'All rights reserved'
+  end
 end

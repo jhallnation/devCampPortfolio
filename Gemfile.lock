@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jhallnation/j_hall_view_tool
+  revision: 4ef59448766a160562ee8de65aab343d55614ec6
+  specs:
+    j_hall_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -178,6 +184,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   friendly_id (~> 5.1.0)
+  j_hall_view_tool!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

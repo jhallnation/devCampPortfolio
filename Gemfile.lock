@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/jhallnation/j_hall_view_tool
-  revision: 4ef59448766a160562ee8de65aab343d55614ec6
+  revision: b340fee7fbb6b9b36b006e994fea0dd0d6a79acf
   specs:
-    j_hall_view_tool (0.1.0)
+    j_hall_view_tool (0.1.1)
 
 GEM
   remote: https://rubygems.org/

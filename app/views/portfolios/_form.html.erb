@@ -11,12 +11,16 @@
       <%= f.text_area :subtitle, class: 'form-control' %>
     </div>
   
-    <div>
-      <%= f.file_field :main_image %> 
+    <div class='form-group'>
+      <label class='btn btn-primary'>
+        upload a main image file <%= f.file_field :main_image, Style: 'display:none;' %>
+      </label> 
     </div>
 
-     <div>
-      <%= f.file_field :thumb_image %> 
+    <div class='form-group'>
+      <label class='btn btn-primary'>
+        upload a thumb image file <%= f.file_field :thumb_image, Style: 'display:none;' %>
+      </label> 
     </div>
   </div>
 

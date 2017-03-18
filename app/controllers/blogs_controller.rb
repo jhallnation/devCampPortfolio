@@ -12,6 +12,8 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
@@ -32,11 +34,9 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        format.html { redirect_to @blog, notice: 'Blog was successfully created!' }
       else
         format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,11 +46,9 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated!' }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,8 +58,7 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed!' }
     end
   end
 

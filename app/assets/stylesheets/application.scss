@@ -35,9 +35,9 @@ body {
 }
 body {
   font-family: 'Raleway', sans-serif;
-  color: #fff;
+  color: #2EB2FF;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  text-shadow: 0 .05rem .2rem rgba(0,0,0,.5);
 }
 h1, .h1,
 h2, .h2,
@@ -87,7 +87,7 @@ h6, .h6, {
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: bold;
-  color: rgba(255,255,255,.5);
+  color: #2EB2FF;
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
@@ -102,8 +102,8 @@ h6, .h6, {
 }
 
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #286DFD;
+  border-bottom-color: #286DFD;
 }
 
 @media (min-width: 48em) {
@@ -212,12 +212,12 @@ h6, .h6, {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('Hire_me.jpg') no-repeat;
+  background: image-url('background.jpg') no-repeat;
   background-size: cover;
 }
 
 .app-footer {
-  color: white;
+  color: #2EB2FF;
 }
 
 .tech-news {
@@ -238,7 +238,9 @@ h6, .h6, {
 }
 .app-card-container > .card {
   padding: 40px;
-}.app-card-container a {
+  background-color: #BFBFBF;
+}
+.app-card-container a {
   color: blue;
 }
 .profile-img {
@@ -251,4 +253,10 @@ h6, .h6, {
 .skill {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.contact {
+  color: #286DFD;
+}
+.contact-text {
+  text-align: center;
 }

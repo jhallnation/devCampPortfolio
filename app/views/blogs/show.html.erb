@@ -1,12 +1,12 @@
-<div class="col-sm-8 blog-main">
+<div>
 
-  <nav class="breadcrumb">
-    <%= link_to 'Home', root_path, class: 'breadcrumb-item' %>
-    <%= link_to 'Blogs', blogs_path, class: 'breadcrumb-item' %>
-    <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item' %>
-    <span class='breadcrumb-item active'><%= @blog.title %></span>
+  <nav>
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Blogs', blogs_path %>
+    <%= link_to @blog.topic.title, topic_path(@blog.topic) %>
+    <span><%= @blog.title %></span>
 
-    <span class="pull-right">
+    <span>
       <%= link_to fa_icon('pencil-square-o'),edit_blog_path(@blog) if logged_in?(:site_admin) %> 
       <%= link_to fa_icon('trash'), @blog, method: :delete, data: { confirm: 'Are you sure you want to delete this post?'} if logged_in?(:site_admin) %> 
     </span>
@@ -22,7 +22,7 @@
 
   <%= render 'comments/comment_form' %>
 
-  <div id='comments' data-blog-id='<%= @blog.id %>'>
+  <div>
     <%= render @blog.comments %>
   </div>
 

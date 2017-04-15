@@ -9,27 +9,26 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:500" rel="stylesheet">
         <meta name='keywords' content='<%= @seo_keywords %>' />
 
-        <%= favicon_link_tag 'favicons/favicontwo.ico' %>
+        <%= favicon_link_tag 'favicons/favicon.ico' %>
 
         <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       </head>
 
       <body>
-
-      <%= render 'shared/blog_nav' %>
+      <%= render 'shared/application_nav' %>
       <%= render 'shared/blog_masthead' %>
         
-        <div class="container">
+        <div>
 
-          <div class="row">
+          <div>
 
             <%= yield %>
 
             <%= render 'shared/blog_sidebar' %>
         </div>
         
-        <%= render 'shared/blog_footer' %>
+          <%= render 'shared/application_footer' %>
 
         <%= alerts %>
 

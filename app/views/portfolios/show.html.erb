@@ -1,10 +1,10 @@
-<div class='container portfolio-container'>
-  <div class='row'>
-    <div class='col-md-7'>
+<div>
+  <div>
+    <div>
       <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
     </div>
 
-    <div class='col-md-5'>  
+    <div>  
       <h1><%= @portfolio_item.title %></h1>
 
       <hr>
@@ -23,8 +23,8 @@
 
 
         <% if logged_in?(:site_admin) %>
-          <div class='col-md-12'>
-            <%= link_to 'Edit Item', edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
+          <div>
+            <%= link_to 'Edit Item', edit_portfolio_path(@portfolio_item) %>
           </div>
         <% end %>
 

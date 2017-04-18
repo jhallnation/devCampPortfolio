@@ -146,18 +146,37 @@
 .footer h5 {
   color: grey;
 }
+
 .content {
   text-align: center;
   padding-top: 100px;
   color: #2EB2FF;
   font-family: Oswald;
 }
+
+.about-container {
+  display: flex;
+  padding: 50px;
+  background: rgba(74, 74, 74, 0.5);
+  margin-right: 75px;
+  margin-left: 75px;
+
+}
+.about-content {
+
+}
 .about-profile {
-  position: absolute;
-  
+padding: 50px;
+color: #2EB2FF;
+width: 50%;
+
 }
-.about {
- display: inline-block;
+.about-resume {
+padding: 50px;
+color: #2EB2FF;
+width: 50%;
 }
+
+
 
 

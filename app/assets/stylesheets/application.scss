@@ -73,18 +73,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 925px) and (min-width: 768px)
-{
-  .mobile-icon{
-    display: none;
-  }
-  .nav {
-    font-size: 27px;
-  }
-  .nav:hover {
-    padding-bottom: 35px;
-  }
-}
+
 @media only screen and (min-width: 925px) 
   {
   .mobile-icon{

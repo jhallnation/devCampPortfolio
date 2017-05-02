@@ -2,7 +2,13 @@
 
 <div>
   <ul id="all">
-    <%= nav_helper 'nav', 'nav-style' %>
-    <%= login_helper 'nav' %> 
+      <%= nav_helper 'nav', 'nav-style' %>
+      <%= login_helper 'nav' %> 
+    <div>
+      <div class='mobile-icon'><i class="fa fa-bars"></i>
+        <div><%=nav_helper 'mobile-nav', 'mobile-button' %>
+        </div>
+      </div>
+    </div>
   </ul>
 </div>

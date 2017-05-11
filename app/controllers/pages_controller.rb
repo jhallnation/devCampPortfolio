@@ -4,11 +4,10 @@ class PagesController < ApplicationController
   	@skills = Skill.all
   end
 
-  def about
-    @skills = Skill.all
+  def contact
   end
 
-  def contact
+  def about
   end
   
   def tech_news

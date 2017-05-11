@@ -16,7 +16,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require lodash
-//= require about.js
 //= require mobilenav
 //= require html.sortable
 //= require cocoon

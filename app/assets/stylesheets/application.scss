@@ -1,7 +1,9 @@
 @import "font-awesome";
 @import "gritter";
 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 /*
  * body
  */
@@ -25,7 +27,6 @@
  * nav
  */
 
-@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 * {
   margin: auto;
@@ -34,7 +35,7 @@
 #all {
   background-color: #4A4A4A;
   border-bottom: solid #2EB2FF;
-  border-width: 7.5px;
+  border-width: 5.5px;
   height: 75px;
   word-spacing: 50px;
   text-align: center;
@@ -65,7 +66,7 @@
   background-color: #2EB2FF;
   color: #4A4A4A;
   padding-top: 500px;
-  padding-bottom: 30px;
+  padding-bottom: 28px;
   padding-right: 20px;
   padding-left: 20px;
   transition: ease-out 0.5s;
@@ -111,10 +112,11 @@
   text-align: center;
   width: 100px;
   height:35px;
-  border: #2EB2FF 7.5px solid;
+  border: #2EB2FF 5.5px solid;
   border-radius:3px;
   margin:0 auto;
   position:relative;
+  background-color: #4A4A4A;
   -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -199,132 +201,117 @@
 
 #content-home {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 200px;
   color: #2EB2FF;
-  font-family: Oswald;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
+/*
+parallax
+*/
 
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
+.parallax-one {
+    /* The image used */
+    background-image: url("Jason2.jpg");
 
-// ------------- MIXINS ------------- //
-@mixin transition($time, $property: all, $easing: ease-in) {
-    transition: $property $time $easing;
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.parallax-two {
+    /* The image used */
+    background-image: url("trucks.jpg");
 
-// ------------- VARIABLES ------------- //
-$parallax-offset: 30vh;
-$content-offset: 40vh;
-$transition-speed: 1.2s;
-$slide-number: 3;
+    /* Set a specific height */
+    min-height: 500px; 
 
-.container-about {
-  z-index:-1;
-  position:relative;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.parallax-three {
+    /* The image used */
+    background-image: url("camping.jpg");
 
-.background-about {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  overflow: hidden;
-  will-change: transform;
-  backface-visibility: hidden;
-  height: 100vh + $parallax-offset;
-  position: fixed;
-  width: 100%;
-  transform: translateY($parallax-offset);
-  @include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,.3);
-  }
-  &:first-child {
-    background-image: url('Jason2.jpg');
-    transform: translateY(-$parallax-offset / 2);
-    .content-wrapper {
-      transform: translateY($parallax-offset /2);
-    }
-  }
-  &:nth-child(2) {
-    background-image: url('trucks.jpg');
-  }
-  &:nth-child(3) {
-    background-image: url(http://s8.postimg.org/grwsbtiat/x_ZMOBTj.jpg);
-  }
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.parallax-four {
+    /* The image used */
+    background-image: url("mtns.jpg");
 
-/* Set stacking context of slides */
-@for $i from 1 to ($slide-number + 1) {
-    .background-about:nth-child(#{$i}) {
-        z-index: ($slide-number + 1) - $i; 
-    }
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.content {
-  &-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+.parallax-paragraph-one {
+  height: 200px;
+  background: rgba(74, 74, 74, 0.75);
+  color: #2EB2FF;
+  font-size: 75px;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
-  flex-flow: column nowrap;
-  color: #fff;
-  font-family: Montserrat;
-  text-transform: uppercase;
-  transform: translateY($content-offset);
-  will-change: transform;
-  backface-visibility: hidden;
-  @include transition($transition-speed + .5, all, cubic-bezier(0.22, 0.44, 0, 1));
-  }
-  &-title {
-    font-size: 12vh;
-    line-height: 1.4;
-  }
-  &-subtitle {
-    margin-bottom: 175px;
-  }
+  padding-top: 100px;
 }
-
-// ------------- SET TRANSFORM VALUES ------------- //
-
-.background-about.up-scroll {
-  transform: translate3d(0,-$parallax-offset / 2,0);
-  .content-wrapper {
-    transform: translateY($parallax-offset / 2);
-  }
-  + .background-about {
-    transform: translate3d(0,$parallax-offset,0);
-      .content-wrapper {
-        transform: translateY($parallax-offset);
-      }
-    }
+.parallax-paragraphs {
+  height: 300px;
+  background: rgba(74, 74, 74, 0.75);
+  color: #2EB2FF;
+  font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
-
-.background-about.down-scroll {
-  transform: translate3d(0,-(100vh + $parallax-offset),0);
-  .content-wrapper {
-    transform: translateY($content-offset);
-  }
-  + .background-about:not(.down-scroll) {
-    transform: translate3d(0,-$parallax-offset / 2,0);
-      .content-wrapper {
-        transform: translateY($parallax-offset / 2);
-      }
-  }
+.parallax-paragraph-last {
+  height: 250px;
+  background: rgba(74, 74, 74, 0.75);
+  color: #2EB2FF;
+  font-size: 36px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+  padding-top: 50px;
 }
 #resume {
   font-size: 35px;
+  font-family: 'Roboto Condensed', sans-serif;
   text-decoration: none;
   background-color: #2EB2FF;
   padding: 5px;
   border-radius: 5px;
   color: #4A4A4A;
+}
+.content-resume { 
+  margin-top: 25px;
+ }
+
+ /*
+ blog
+ */
+.blog-masthead-container {
+  text-align: center;
+  padding: 100px;
+  background: rgba(74, 74, 74, 0.75);
+  color: #2EB2FF;
+  font-family: 'Roboto Condensed',
 }

@@ -6,7 +6,7 @@
     )
 end
 
-10.times do |blog|
+20.times do |blog|
   Blog.create!(
     title: "testing #{blog}",
     body:  'This is just for fun', 

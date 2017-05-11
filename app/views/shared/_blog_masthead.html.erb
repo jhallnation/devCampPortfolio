@@ -1,12 +1,12 @@
 <div>
   <div class='blog-masthead-container'>
-    <h1>My Blog</h1>
-    <p>As I have studied web development I have learned that there is a lot to know.  Everytime I learn something new I realize there is much more I don't know.  So here are some things I have learned along the way!</p>
-    <span>
+    <div>My Blog</div>
+    <div>As I have studied web development I have learned that there is a lot to know.  Everytime I learn something new I realize there is much more I don't know.  So here are some things I have learned along the way!</div>
+    <div>
       <%= link_to 'Create a New Blog', new_blog_path if logged_in?(:site_admin) %>
-    </span>
-    <span>
+    </div>
+    <div>
       <%= link_to 'Topics', topics_path %>
-    </span>
+    </div>
   </div>
 </div>

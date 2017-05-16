@@ -1,11 +1,11 @@
-<div class='blog-posts'>
-
-  <h1><%= @topic.title %></h1>
-
+<div class='blog-posts '>
   <%= paginate @blogs %>
+  <div class='blog-body'>
+    <h1 class='topic-title'><%= @topic.title %></h1>
 
-  <%= render @blogs %>
 
+    <%= render @blogs %>
+
+  </div>
   <%= paginate @blogs %>
-
 </div>

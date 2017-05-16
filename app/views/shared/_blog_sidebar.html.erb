@@ -1,25 +1,10 @@
- <div class='blog-sidebar'>
-          <div>
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          
-            <%= source_helper('alert alert-info blog-sidebar-source') %>
+ <div class='blog-sidebar'>        
+  <%= source_helper('alert alert-info blog-sidebar-source') %>
 
-          <div>
-            <h4>Topics</h4>
-            <% @side_bar_topics.each do |topic| %>
-              <p><%= link_to topic.title, topic_path(topic) %></p> 
-            <% end %>
-          </div>
-
-          <div>
-            <h4>Elsewhere</h4>
-            <ol>
-              <li><a href='#'><%= fa_icon "github" %> Github</a></li>
-              <li><a href='#'><%= fa_icon "facebook" %> Facebook</a></li>
-              <li><a href='#'><%= fa_icon "twitter" %> Twitter</a></li>
-              <li><a href='#'><%= fa_icon "instagram" %> Instagram</a></li>
-            </ol>
-          </div>
-        </div>
+  <div>
+  <h1 class='blog-title'>Topics</h1>
+  <% @side_bar_topics.each do |topic| %>
+    <p><%= link_to topic.title, topic_path(topic), :class => 'links' %></p> 
+  <% end %>
+  </div>
+</div>

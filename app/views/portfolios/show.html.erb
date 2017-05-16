@@ -21,12 +21,13 @@
           <p><%= t.name %></p>
         <% end %>
 
-
-        <% if logged_in?(:site_admin) %>
-          <div>
-            <%= link_to 'Edit Item', edit_portfolio_path(@portfolio_item) %>
-          </div>
-        <% end %>
+        <div>
+          <% if logged_in?(:site_admin) %>
+            <div>
+              <%= link_to 'Edit Item', edit_portfolio_path(@portfolio_item) %>
+            </div>
+          <% end %>
+        </div>
 
 
     </div>

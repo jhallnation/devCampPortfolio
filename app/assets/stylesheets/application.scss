@@ -1,9 +1,12 @@
 @import "font-awesome";
 @import "gritter";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 /*
  * body
  */
@@ -52,6 +55,7 @@
   color: #2EB2FF;
   transition: ease-out 0.2s;
   margin: 10px;
+  padding-top: 5px;
 }
   
 
@@ -71,13 +75,20 @@
   padding-left: 20px;
   transition: ease-out 0.5s;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
   .nav {
     display: none;
   }
+  .blog-sidebar {
+    display: none;
+  }
+  .blog-posts {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 }
 
-@media only screen and (min-width: 925px) 
+@media only screen and (min-width: 900px) 
   {
   .mobile-icon{
     display: none;
@@ -96,8 +107,11 @@
   text-decoration: none;
   background-color: #4A4A4A;
   border-bottom: solid #2EB2FF;
-  border-width: 7.5px;
+  border-width: 3px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
   position: relative;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -179,12 +193,12 @@
   text-align:center;
 }
 .footer h3{
-  font-family: Oswald;
+  font-family: 'Quicksand', sans-serif;
   font-size: 15px;
   font-weight: 100;
   margin-top:70px;
   margin-left:40px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   color: #2EB2FF;
 }
 .contact {
@@ -193,6 +207,37 @@
 .footer h5 {
   color: grey;
 }
+/*
+ * links
+ */
+.links {
+  text-decoration: none;
+  color: #0B2C40;
+  font-size: 20px;
+  
+}
+.links:hover {
+  color: #175980;
+  font-size: 22px;
+}
+.admin-links {
+  background-color: white;
+}
+ .social {
+  margin-top: 5px;
+  margin-bottom: 15px;
+ }
+ .social a{
+  margin: 5px;
+  font-size: 20px;
+  color: #2EB2FF;
+ }
+ .social a:hover {
+  font-size: 25px;
+ }
+ .arrow {
+  color: #0B2C40;
+ }
 
 /*
  * content
@@ -203,7 +248,7 @@
   text-align: center;
   padding-top: 200px;
   color: #2EB2FF;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /*
@@ -268,7 +313,7 @@ parallax
   background: rgba(74, 74, 74, 0.75);
   color: #2EB2FF;
   font-size: 75px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding-top: 100px;
 }
@@ -277,7 +322,7 @@ parallax
   background: rgba(74, 74, 74, 0.75);
   color: #2EB2FF;
   font-size: 30px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding-top: 100px;
   padding-right: 50px;
@@ -288,13 +333,13 @@ parallax
   background: rgba(74, 74, 74, 0.75);
   color: #2EB2FF;
   font-size: 36px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding-top: 50px;
 }
 #resume {
   font-size: 35px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   background-color: #2EB2FF;
   padding: 5px;
@@ -313,17 +358,19 @@ parallax
   padding: 100px;
   background: rgba(74, 74, 74, 0.50);
   color: #2EB2FF;
-  font-family: 'Roboto Condensed',
+  font-family: 'Quicksand', sans-serif;
 }
 .blog-layout {
   display: flex;
-  margin: 50px;
+  margin: 25px;
 
 }
 .blog-posts {
   width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
   background: rgba(255, 255, 255, 0.50);
-  padding: 50px;
+  padding: 10px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -337,4 +384,36 @@ parallax
   flex-basis: 25%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.blog-body {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.blog-title {
+  color: #2EB2FF;
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  padding: 10px;
+}
+.blog-text {
+  font-family: 'Indie Flower', cursive;
+  padding: 10px;
+}
+.topic-title {
+  color: #0B2C40;
+  font-family: 'Quicksand', sans-serif;
+  padding-left: 10px;
+}
+.blog-title-bcrumb {
+  color: #175980;
+  font-size: 20px;
+}
+.blog-content {
+  padding: 10px;
+}
+.published-date {
+  padding-left: 10px;
 }

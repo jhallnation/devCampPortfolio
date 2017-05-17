@@ -417,3 +417,30 @@ parallax
 .published-date {
   padding-left: 10px;
 }
+/*
+* comments
+*/
+.comment {
+  display: block;
+}
+.comment-label {
+  color: #175980;
+}
+.comment-box {
+  border-radius: 5px;
+  width: 99%;
+}
+.comment-button {
+  border: none;
+  color: #2EB2FF;
+  background-color: #175980;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+.comment-button:hover {
+  color: #175980;
+  background-color: #2EB2FF;
+}

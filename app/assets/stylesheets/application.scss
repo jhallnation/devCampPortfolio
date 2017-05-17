@@ -87,6 +87,11 @@
     border-bottom-right-radius: 10px;
   }
 }
+@media only screen and (max-width: 500px){
+  .tweets {
+    width: 100% !important;
+  }
+}
 
 @media only screen and (min-width: 900px) 
   {
@@ -470,9 +475,17 @@ parallax
   flex-wrap: wrap;
 }
 .tweets {
+  width: 150px;
   margin:5px;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 10px;
   background-color: white;
-  width: 100%;
+  border: solid 2px #1DA1F2;
+  font-size: 14px;
+  font-family: helvetica neue;
+  text-overflow: ellipsis;
+}
+.tweets a{
+  text-decoration: none;
+  color: #1DA1F2;
 }

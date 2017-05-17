@@ -363,7 +363,6 @@ parallax
 .blog-layout {
   display: flex;
   margin: 25px;
-
 }
 .blog-posts {
   width: 100%;
@@ -443,4 +442,37 @@ parallax
 .comment-button:hover {
   color: #175980;
   background-color: #2EB2FF;
+}
+/*
+* tech news
+*/
+.tech-news-layout {
+  display: flex;
+  margin: 25px;
+}
+.tech-news-content {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.50);
+  padding: 10px;
+  border-radius: 10px;
+}
+.tech-news-title {
+   text-align: center;
+  padding: 25px;
+  background: rgba(74, 74, 74, 0.50);
+  color: #2EB2FF;
+  font-family: 'Quicksand', sans-serif;
+}
+.tweet-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tweets {
+  margin:5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  width: 100%;
 }

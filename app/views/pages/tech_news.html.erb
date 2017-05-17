@@ -1,14 +1,12 @@
-<div>
-  <h1>Rails News</h1>
-    <div>
-      <% @tweets.each do |tweet| %>
-        <div>
-          <div>
-            <div>
-              <%= twitter_parcer tweet %>
-            </div>
+<h1 class='tech-news-title'>Rails News</h1>
+<div class='tech-news-layout'>
+  <div class='tech-news-content'>
+      <div class='tweet-container'>
+        <% @tweets.each do |tweet| %>
+          <div class='tweets'>
+            <%= twitter_parcer tweet %>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+  </div>
 </div>

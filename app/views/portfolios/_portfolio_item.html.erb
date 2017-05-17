@@ -1,9 +1,9 @@
 <div>
   <div>
-    <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), width: '100%' %>
-    <p><span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
+    <%= link_to image_tag(portfolio_img(portfolio_item.main_image, 'thumb'), width: '100%'), portfolio_show_path(portfolio_item) %>
+    <div class='portfolio-index-details'><h2 class='portfolio-index-title'><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item), class: 'portfolio-index-title' %></h2>
     <%= portfolio_item.subtitle %>
-    </p>
+    </div>
   </div>
 </div>
 

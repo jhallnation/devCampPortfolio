@@ -1,25 +1,23 @@
-<div>
-  <div>
-    <div>
-      <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
-    </div>
+<div class='portfolio-show-layout'>
+  <div class='portfolio-show-content'>
+    <div class='portfolio-container'>
+      <div>
+        <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: 400 %>
+      </div>
 
-    <div>  
-      <h1><%= @portfolio_item.title %></h1>
+      <div class='portfolio-show-details'>  
+        <h1 class='portfolio-title'><%= @portfolio_item.title %></h1>
 
-      <hr>
+        <em class='portfolio-subtitle'><%= @portfolio_item.subtitle %></em>
 
-      <em><%= @portfolio_item.subtitle %></em>
+        <h4 class='portfolio-body'><%= @portfolio_item.body %></h4>
 
-      <p><%= @portfolio_item.body %></p>
-
-      <hr>
-
-      <h3>Technologies Used:</h3>
-
+        <h3 class='portfolio-title'>Technologies Used:</h3>
+        <div class='portfolio-subtitle'>
         <% @portfolio_item.technologies.each do |t| %>
           <p><%= t.name %></p>
         <% end %>
+        </div>
 
         <div>
           <% if logged_in?(:site_admin) %>
@@ -29,7 +27,7 @@
           <% end %>
         </div>
 
-
+      </div>
     </div>
   </div>
 </div>

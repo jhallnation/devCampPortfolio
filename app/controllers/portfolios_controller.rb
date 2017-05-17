@@ -3,7 +3,7 @@ layout 'portfolio'
   before_action :set_portfolio, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
   def index
-    @portfolio_items = Portfolio.by_position
+    @portfolio_items = Portfolio.page(params[:page]).per(1)
   end
 
   def sort

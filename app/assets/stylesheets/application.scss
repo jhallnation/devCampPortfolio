@@ -251,9 +251,17 @@
 
 #content-home {
   text-align: center;
-  padding-top: 200px;
+  margin-top: 125px;
   color: #2EB2FF;
   font-family: 'Quicksand', sans-serif;
+  background-color: rgba(74, 74, 74, 0.50);
+  padding-top: 75px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 75px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 10px;
 }
 
 /*
@@ -432,22 +440,42 @@ parallax
   color: #175980;
 }
 .comment-box {
+  height: 45px;
   border-radius: 5px;
+  font-size: 15px;
   width: 99%;
 }
-.comment-button {
+.button {
   border: none;
   color: #2EB2FF;
   background-color: #175980;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 5px;
+  margin-top: 10px;
+  font-size: 20px;
 }
-.comment-button:hover {
+.button:hover {
   color: #175980;
   background-color: #2EB2FF;
+}
+.button-danger {
+  border: none;
+  color: #FF2E4A;
+  background-color: #60111C;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.button-danger:hover {
+  color: #60111C;
+  background-color: #FF2E4A;
 }
 /*
 * tech news
@@ -560,4 +588,45 @@ parallax
 }
 .portfolio-subtitle {
   color: #2385BF;
+}
+/*
+* authorization forms
+*/
+.forms-layout {
+  display: flex;
+  margin: 125px 25px 75px 25px;
+}
+.forms-content {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(74, 74, 74, 0.50);
+  padding: 10px;
+  border-radius: 10px;
+  color: #2EB2FF;
+  font-family: 'Quicksand', sans-serif;
+}
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form-box {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.auth-links {
+  background-color: #2385BF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 40px;
+  height: 90px;
+  width: 300px;
+  border-radius: 5px;
+  text-align: center;
+}
+.login-links {
+  padding: 10px;
 }

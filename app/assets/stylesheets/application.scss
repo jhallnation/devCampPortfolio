@@ -445,6 +445,32 @@ parallax
   font-size: 15px;
   width: 99%;
 }
+.posted-comment-box {
+  padding: 50px;
+  border: solid 2px #4A4A4A;
+  border-radius: 5px;
+}
+.single-posted-comment-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.single-posted-comment {  
+  display: inline-flex;
+}
+.single-comment {
+  font-family: 'Quicksand', sans-serif;
+  color: #2EB2FF;
+  margin-left: 10px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
 .button {
   border: none;
   color: #2EB2FF;
@@ -455,6 +481,7 @@ parallax
   padding-right: 15px;
   border-radius: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 .button:hover {

@@ -1,22 +1,18 @@
+<hr>
+<div class='single-posted-comment-container'>
 
-<div>
-  <div>
+  <div class='single-posted-comment'>
     <div>
-      <div>
-        <div>
-          <%= gravatar_helper comment.user %>
-        </div>
-
-        <div>
-          <div>
-            <%= comment.content %>
-          </div>
-
-          <div>
-            Comment posted by <span><%= comment.user.first_name %></span> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
-          </div>
-        </div>
-      </div>
+      <%= gravatar_helper comment.user %>
     </div>
+    <div class='single-comment'>
+      <%= comment.content %>
+    </div>
+  </div>
+
+  <div>
+    <em>
+      Comment posted by <%= comment.user.first_name %> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+    </em>
   </div>
 </div>

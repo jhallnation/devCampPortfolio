@@ -25,7 +25,7 @@
 
     <%= render 'comments/comment_form' %>
 
-    <div data-blog-id='<%= @blog.id %>'>
+    <div id='comments' data-blog-id='<%= @blog.id %>' class='posted-comment-box'>
       <%= render @blog.comments %>
     </div>
   </div>

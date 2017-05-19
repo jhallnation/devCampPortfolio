@@ -1,14 +1,15 @@
-<div class='inner cover'>
-  <h1 class='cover-heading'>Rails News</h1>
-    <div class='row'>
-      <% @tweets.each do |tweet| %>
-        <div class='col-md-6'>
-          <div class='tech-news'>
-            <div class='card'>
-              <%= twitter_parcer tweet %>
-            </div>
+<div class='tech-news-title'>
+  <h1>Rails News</h1>
+  <p>Tweets about rails</p>
+</div>
+<div class='tech-news-layout'>
+  <div class='tech-news-content'>
+      <div class='tweet-container'>
+        <% @tweets.each do |tweet| %>
+          <div class='tweets'>
+            <%= twitter_parcer tweet %>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+  </div>
 </div>

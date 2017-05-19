@@ -71,5 +71,7 @@ gem 'twitter', '~> 6.1'
 gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'lodash-rails', '~> 4.17', '>= 4.17.4'
 
 ruby '2.4.0'

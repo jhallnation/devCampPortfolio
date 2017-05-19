@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require tether
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+//= require lodash
+//= require mobilenav
 //= require html.sortable
 //= require cocoon
 //= require gritter

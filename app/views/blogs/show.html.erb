@@ -23,9 +23,9 @@
       <%= markdown @blog.body %>
     </h4>
 
-    <%= render 'comments/comment_form' %>
 
     <div id='comments' data-blog-id='<%= @blog.id %>' class='posted-comment-box'>
+    <%= render 'comments/comment_form' %>
       <%= render @blog.comments %>
     </div>
   </div>

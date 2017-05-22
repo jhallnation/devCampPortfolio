@@ -16,23 +16,19 @@
       <%= f.text_area :subtitle %>
     </div>
   
-    <div>
-      <label>
+      <div class='button-portfolio'>
         upload a main image file <%= f.file_field :main_image, Style: 'display:none;' %>
-      </label> 
-    </div>
+      </div> 
 
-    <div>
-      <label>
+      <div class='button-portfolio'>
         upload a thumb image file <%= f.file_field :thumb_image, Style: 'display:none;' %>
-      </label> 
-    </div>
+      </div> 
   </div>
 
   <div>
     <div>
       <%= f.label :body %>
-      <%= f.text_area :body, rows: 13 %>
+      <%= f.text_area :body, rows: 13, class: 'new-portfolio-box' %>
     </div>
   </div>
 </div>
@@ -44,13 +40,13 @@
     <%= f.fields_for :technologies do |technology_form| %>
       <%= render 'technology_fields', f: technology_form %>
     <% end %>
-    <div>
-      <%= link_to_add_association 'Add Technology', f, :technologies %>  
+    <div  class='portfolio-new-button'>
+      <%= link_to_add_association 'Add Technology', f, :technologies, class: 'button-portfolio'  %>  
     </div>
   </div>
 
   <div>
-    <%= f.submit 'Save Portfolio Item' %>
+    <%= f.submit 'Save Portfolio Item', class: 'button'  %>
   </div>
 </div>
 <% end %>

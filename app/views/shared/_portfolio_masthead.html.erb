@@ -2,4 +2,7 @@
   <div class='portfolio-masthead'>
     <h1>My Portfolio</h1>
     <p>Check out my projects.  If you have any feedback or job opportunities, please feel free to contact me <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>
+    <div class='admin-links'>
+      <%= link_to 'Create a New Portfolio Item', new_portfolio_path if logged_in?(:site_admin) %>
+    </div>
   </div>

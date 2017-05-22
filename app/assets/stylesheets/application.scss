@@ -625,6 +625,44 @@ hr {
 .portfolio-subtitle {
   color: #2385BF;
 }
+.portfolio-new {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.50);
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.button-portfolio {
+  border: none;
+  width: 250px;
+  color: #FF7B2E;
+  background-color: #803D17;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.button-portfolio:hover {
+  color: #803D17;
+  background-color: #FF7B2E;
+}
+.portfolio-new-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.new-portfolio-box {
+  width: 99%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
 /*
 * authorization forms
 */

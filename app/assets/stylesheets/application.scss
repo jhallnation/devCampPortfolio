@@ -271,7 +271,7 @@ parallax
 
 .parallax-one {
     /* The image used */
-    background-image: url("Jason2.jpg");
+    background: image-url("Jason2.jpg");
 
     /* Set a specific height */
     min-height: 500px; 
@@ -284,7 +284,7 @@ parallax
 }
 .parallax-two {
     /* The image used */
-    background-image: url("trucks.jpg");
+    background: image-url("trucks.jpg");
 
     /* Set a specific height */
     min-height: 500px; 
@@ -297,7 +297,7 @@ parallax
 }
 .parallax-three {
     /* The image used */
-    background-image: url("camping.jpg");
+    background: image-url("camping.jpg");
 
     /* Set a specific height */
     min-height: 500px; 
@@ -310,7 +310,7 @@ parallax
 }
 .parallax-four {
     /* The image used */
-    background-image: url("mtns.jpg");
+    background: image-url("mtns.jpg");
 
     /* Set a specific height */
     min-height: 500px; 

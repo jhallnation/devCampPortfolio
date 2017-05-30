@@ -1,8 +1,13 @@
 <div class='blog-content'>
   <h2><%= link_to blog.title.upcase, blog, :class => 'blog-title' %></h2>
+  <h6 class='published-date'>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</h6>
 
-    <%= render partial: 'blogs/admin_actions', locals: {blog: blog} %>
+  <%= render partial: 'blogs/admin_actions', locals: {blog: blog} %>
 
-    <h3 class='blog-text'><%= blog.body %></h3>
-    <h6 class='published-date'>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</h6>
+  <h3 class='blog-text'>
+    <%= truncate(markdown(blog.body), length: 600, escape: false) %>
+    <%= link_to "Continue reading", blog %>
+  </h3>
+
+  <!-- <h3 class='blog-text'><%= blog.body %></h3> -->
 </div>            

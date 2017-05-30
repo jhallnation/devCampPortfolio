@@ -5,7 +5,7 @@ module BlogsHelper
 
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
-      CodeRay.scan(code, language ||= :ruby).div
+      CodeRay.scan(code, language).div
     end
   end
 
@@ -17,6 +17,7 @@ module BlogsHelper
       no_intra_emphasis: true,
       autolink: true,
       lax_html_blocks: true,
+      hard_wrap: true,
     }
 
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)

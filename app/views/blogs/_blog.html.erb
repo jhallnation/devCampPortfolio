@@ -4,10 +4,10 @@
 
   <%= render partial: 'blogs/admin_actions', locals: {blog: blog} %>
 
-  <h3 class='blog-text'>
-    <%= truncate(markdown(blog.body), length: 600, escape: false) %>
+  <div>
+    <%= truncate((blog.body), length: 1200, escape: false, class: 'ckeditor') %>
     <%= link_to "Continue reading", blog %>
-  </h3>
+  </div>
 
   <!-- <h3 class='blog-text'><%= blog.body %></h3> -->
 </div>            

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :topics, only: [:index, :show]
 
   devise_for :users, path: '', path_names: { sign_in: 'log_in', sign_out: 'logout', sign_up: 'register' }

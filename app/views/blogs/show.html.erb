@@ -19,9 +19,9 @@
 
     <h4 class='topic-title'><%= @blog.topic.title %></h4>
 
-    <h4 class='blog-text'>
-      <%= markdown @blog.body %>
-    </h4>
+    <div class='blog-text'>
+      <%= raw @blog.body %>
+    </div>
 
 
     <div id='comments' data-blog-id='<%= @blog.id %>' class='posted-comment-box'>

@@ -372,7 +372,7 @@ parallax
   font-family: 'Quicksand', sans-serif;
 }
 .blog-layout {
-  display: flex;
+  display: inline-flex;
   margin: 25px;
 }
 .blog-posts {
@@ -603,10 +603,15 @@ hr {
 .portfolio-index-details {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .portfolio-index-title {
   color: #2EB2FF;
   text-decoration: none;
+  background-color: #4a4a4a;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 .portfolio-body {
   background-color: white;

@@ -94,12 +94,6 @@
   }
 }
 
-@media only screen and (max-device-width: 560px) {
-   #content-home {
-    margin: 75px 25px 75px 25px !important;
-  }
-}
-
 @media only screen and (min-width: 900px) 
   {
   .mobile-icon{
@@ -258,7 +252,10 @@
 
 #content-home {
   text-align: center;
-  margin: 125px 25px 125px 25px;
+  margin-top: 125px;
+  margin-bottom: 125px;
+  margin-left: 25px;
+  margin-right: 25px;
   color: #2EB2FF;
   font-family: 'Quicksand', sans-serif;
   background-color: rgba(74, 74, 74, 0.50);

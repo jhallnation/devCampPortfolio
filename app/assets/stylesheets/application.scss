@@ -92,7 +92,10 @@
   .tweets {
     width: 100% !important;
   }
-  #content-home {
+}
+
+@media only screen and (max-device-width: 560px) {
+   #content-home {
     margin: 75px 25px 75px 25px !important;
   }
 }

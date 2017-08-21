@@ -7,7 +7,6 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 /*
  * body
  */
@@ -174,7 +173,7 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
-  height: 10em;
+  height: 15em;
 }
 .footer #container{
   margin-top:5px;
@@ -206,6 +205,10 @@
   margin-left:40px;
   margin-bottom: 0px;
   color: #2EB2FF;
+}
+.footer p{
+  color: #2EB2FF;
+  font-family: 'Quicksand', sans-serif;
 }
 .contact {
   color: white;
@@ -404,6 +407,10 @@ parallax
   background-color: white;
   padding: 10px;
   border-radius: 10px;
+  font-family: arial;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  line-height: 175%;
 }
 .blog-title {
   color: #2EB2FF;
@@ -548,6 +555,9 @@ hr {
   border: solid 2px #1DA1F2;
   font-size: 14px;
   font-family: helvetica neue;
+  line-height: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .tweets a{
   text-decoration: none;

@@ -74,5 +74,6 @@ gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'lodash-rails', '~> 4.17', '>= 4.17.4'
 gem 'ckeditor', '~> 4.2', '>= 4.2.3'
+gem 'sendgrid-ruby'
 
 ruby '2.4.0'

@@ -331,6 +331,7 @@ DEPENDENCIES
   mini_magick (~> 4.6, >= 4.6.1)
   petergate (~> 1.7)
   pg (~> 0.18)
+  popper_js (~> 1.12, >= 1.12.9)
   pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.1)

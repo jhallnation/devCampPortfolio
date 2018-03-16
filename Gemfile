@@ -75,5 +75,6 @@ gem 'jquery-turbolinks', '~> 2.1'
 gem 'lodash-rails', '~> 4.17', '>= 4.17.4'
 gem 'ckeditor', '~> 4.2', '>= 4.2.3'
 gem 'sendgrid-ruby'
+gem 'popper_js', '~> 1.12', '>= 1.12.9'
 
 ruby '2.4.0'

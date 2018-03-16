@@ -1,9 +1,17 @@
 <div>
-  <div>
-    <div class='portfolio-index-details'><h2 class='portfolio-index-title'><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item), class: 'portfolio-index-title' %></h2>
+  <div class='admin-links'>
+    <%= link_to 'Edit or Delete',  portfolio_show_path(portfolio_item) if logged_in?(:site_admin) %>
+  </div>
+  <div class='portfolio-preview'>
+      <%= image_tag(portfolio_img(portfolio_item.main_image, 'thumb')) %>
+    <div class='portfolio-index-details'>
+      <h2 class='portfolio-index-title'><%= portfolio_item.title %></h2>
     <%= portfolio_item.subtitle %>
+    <% portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+    <% end %>
+    <h4 class='portfolio-body'><%= portfolio_item.body %></h4>
     </div>
-    <%= link_to image_tag(portfolio_img(portfolio_item.main_image, 'thumb'), width: '100%'), portfolio_show_path(portfolio_item) %>
   </div>
 </div>
 

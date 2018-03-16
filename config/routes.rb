@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   
   get 'tech-news', to: 'pages#tech_news'
 
+  get 'jhall_dev', to: 'pages#jhall_dev'
+
   resources :blogs do 
     member do
       get :toggle_status

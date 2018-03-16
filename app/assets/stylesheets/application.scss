@@ -661,16 +661,7 @@ hr {
 .portfolio-subtitle {
   color: #2385BF;
 }
-.portfolio-new {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: rgba(255, 255, 255, 0.50);
-  padding: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-}
-.button-portfolio {
+.button-form {
   border: none;
   width: 250px;
   color: #FF7B2E;
@@ -685,7 +676,7 @@ hr {
   font-size: 20px;
   text-decoration: none;
 }
-.button-portfolio:hover {
+.button-form:hover {
   color: #803D17;
   background-color: #FF7B2E;
 }
@@ -699,10 +690,85 @@ hr {
   font-size: 20px;
   font-family: 'Quicksand', sans-serif;
 }
-.portfolio-subtitle-form {
+/*
+* blog/portfolio forms
+*/
+.form-container {
+  margin:10px;
+  background: rgba(255, 255, 255, 0.50);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+.form-container h1, h2{
+  text-align: center;
   margin-bottom: 10px;
-}.portfolio-body-form {
+}
+.form-option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-text-label{
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.form-text-field {
+  width: 90%;
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.form-text-box {
+   margin: 10px;
+   width: 90%;
+    border-radius: 5px;
+  font-size: 15px;
+}
+.form-button-container{
+  margin:10px;
+  display: flex;
+  justify-content: space-between;
+}
+.button-form {
+  border: none;
+  color: #fff;
+  background-color: #5F78D7;
+  padding:10px;
+  border-radius: 5px;
+  margin:auto;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.button-form a{
+  text-decoration: none;
+  text-align: center;
+  color:#fff;
+}
+.button-form:hover {
+  color:#fff;
+  background-color: #00293A;
+}
+.submit-button {
+  border: none;
+  color: #2EB2FF;
+  background-color: #175980;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.submit-button:hover {
+  color: #175980;
+  background-color: #2EB2FF;
 }
 /*
 * authorization forms

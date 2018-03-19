@@ -340,13 +340,13 @@ parallax
     background-size: cover;
 }
 .parallax-paragraph-one {
-  height: 200px;
+  height: 150px;
   background: rgba(74, 74, 74, 0.75);
   color: #2EB2FF;
   font-size: 75px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .parallax-paragraphs {
   
@@ -588,6 +588,9 @@ hr {
   display: flex;
   flex-wrap: wrap;
   margin-top: 25px;
+  background-color: #4a4a4a;
+  padding: 10px;
+  border-radius: 5px;
 }
 .portfolio-layout {
   display: flex;
@@ -644,7 +647,6 @@ hr {
 .portfolio-index-title {
   color: #2EB2FF;
   text-decoration: none;
-  background-color: #4a4a4a;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -828,4 +830,34 @@ hr {
 }
 .login-links {
   padding: 10px;
+}
+/*
+* jhall dev
+*/
+
+.jhall-dev-container{
+  margin:20px;
+  background: rgba(74, 74, 74, 0.75);
+  padding: 20px;
+  border-radius: 5px;
+}
+.jhall-dev-nav{
+  color:#fff;
+  font-family: 'Quicksand', sans-serif;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.jhalldev-body h1{
+  color:#fff;
+  text-align: center;
+}
+.jhalldevlink{
+  cursor: pointer;
+}
+.jhalldevlink:hover{
+  color: grey;
+}
+.jhalldevlinkactive{
+  color:grey;
 }

@@ -17,6 +17,7 @@
 //= require jquery-ui
 //= require lodash
 //= require mobilenav
+//= require jhalldev
 //= require html.sortable
 //= require cocoon
 //= require gritter

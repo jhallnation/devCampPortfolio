@@ -3,13 +3,22 @@
     <%= link_to 'Edit or Delete',  portfolio_show_path(portfolio_item) if logged_in?(:site_admin) %>
   </div>
   <div class='portfolio-preview'>
+    <div class='portfolio-img'>
       <%= image_tag(portfolio_img(portfolio_item.main_image, 'thumb')) %>
+    </div>
     <div class='portfolio-index-details'>
       <h2 class='portfolio-index-title'><%= portfolio_item.title %></h2>
-    <%= portfolio_item.subtitle %>
-    <% portfolio_item.technologies.each do |t| %>
-      <p><%= t.name %></p>
-    <% end %>
+      <div class='portfolio-subtitle'>
+        <%= portfolio_item.subtitle %>
+      </div>
+      <br>
+      <h3 class='portfolio-title'>Technologies Used:</h3>
+      <br>
+      <div class='portfolio-subtitle'>
+        <% portfolio_item.technologies.each do |t| %>
+          <p><%= t.name %></p>
+        <% end %>
+      </div>
     <h4 class='portfolio-body'><%= portfolio_item.body %></h4>
     </div>
   </div>

@@ -2,4 +2,10 @@
   <h1>Edit this Portfolio Item</h1>
 
   <%= render 'form', portfolio_item: @portfolio_item %>
+  <div class='form-option'>
+    <div class='cnl-ctnr'>
+      <%= link_to 'Cancel', portfolio_show_path(@portfolio_item), class: 'cancel-btn' %>
+    </div>
+    <br>
+  </div>
 </div>

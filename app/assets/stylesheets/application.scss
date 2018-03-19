@@ -765,10 +765,28 @@ hr {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 20px;
+  cursor: pointer;
 }
 .submit-button:hover {
   color: #175980;
   background-color: #2EB2FF;
+}
+.cancel-btn{
+  text-decoration: none;
+  padding:10px;
+  color:#fff;
+  background-color: red;
+  margin:10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.cancel-btn:hover {
+  color: red;
+  background-color: #fff;
+}
+.cnl-ctnr{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /*
 * authorization forms

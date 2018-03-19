@@ -5,11 +5,13 @@
     <% end %>
   <% end %>
 
-  <div>
-    <%= f.text_field :title, placeholder: 'Title', class: 'new-blog-box blog-title-topic-box' %>
+  <div class='form-option'>
+    <%= f.label :title, class: 'form-text-label' %>
+    <%= f.text_field :title, placeholder: 'Title', class: 'form-text-field' %>
   </div>
-  <div>
+  <div class='form-option'>
     <%= f.label :topic_id %>
+    <br>
     <%= f.collection_select(:topic_id, Topic.all, :id, :title,
                               {
                               include_blank: true
@@ -17,21 +19,24 @@
                               class: 'new-blog-box blog-title-topic-box'
                               )  %>
   </div>
-
-  <div>
-    <%= f.radio_button :status, 'draft' %>
-    <%= f.label :status, 'Draft' %>
+  <br>
+  <div  class='form-option'>
+    <div>
+      <%= f.radio_button :status, 'draft' %>
+      <%= f.label :status, 'Draft' %>
+    </div>
+    <br>
+    <div>
+      <%= f.radio_button :status, 'published' %>
+      <%= f.label :status, 'Published' %>
+    </div>
   </div>
-  <div>
-    <%= f.radio_button :status, 'published' %>
-    <%= f.label :status, 'Published' %>
-  </div>
-
+  <br>
   <div>
     <%= f.cktext_area :body, rows: 20, placeholder: 'Blog Content' %>
   </div>
 
   <div class="form-group">
-    <%= f.submit 'Submit', class: 'button' %>
+    <%= f.submit 'Submit', class: 'submit-button' %>
   </div>
 <% end %>

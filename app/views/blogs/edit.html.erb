@@ -1,7 +1,8 @@
-<div class='blog-posts'>
+<div class='form-container'>
   <h1>Editing Blog</h1>
 
   <%= render 'form', blog: @blog %>
-
-  <%= link_to 'Cancel', @blog %>
+  <div class='cnl-ctnr'>
+    <%= link_to 'Cancel', @blog, class: 'cancel-btn'  %>
+  </div>
 </div>

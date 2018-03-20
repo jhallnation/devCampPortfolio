@@ -3,7 +3,7 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Righteous');
-
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100');
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
@@ -851,13 +851,27 @@ hr {
 .jhalldev-body h1{
   color:#fff;
   text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 .jhalldevlink{
   cursor: pointer;
 }
 .jhalldevlink:hover{
-  color: grey;
+  color: #9C9C9C;
 }
 .jhalldevlinkactive{
-  color:grey;
+  color:#9C9C9C;
+}
+.jd-design-body-images{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.jd-design-irishtacos{
+  height: 275px;
+  margin:5px;
+}
+.jd-design-salution{
+  height: 275px;
+  margin:5px;
 }

@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100');
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Nunito:200');
 
 /*
  * body
@@ -843,35 +844,70 @@ hr {
 }
 .jhall-dev-nav{
   color:#fff;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .jhalldev-body h1{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 48px;
   color:#fff;
   text-align: center;
   font-family: 'IBM Plex Sans', sans-serif;
+  background: -webkit-linear-gradient(#B2FF2E,#FF7B2E,#FF2E4A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jd_line { 
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFD62E), to(#FF2E4A), color-stop(50%, #FF7B2E));
 }
 .jhalldevlink{
   cursor: pointer;
+  letter-spacing: 2px;
 }
 .jhalldevlink:hover{
-  color: #9C9C9C;
+  color: #FF7B2E;
+  transform: scale(1.2,1.2);
+  -webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+  transition: all 800ms ease;
 }
 .jhalldevlinkactive{
-  color:#9C9C9C;
+  color:#FF7B2E;
 }
 .jd-design-body-images{
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .jd-design-irishtacos{
   height: 275px;
   margin:5px;
 }
+.jd-design-irishtacos:hover{
+  animation-name: jdimage;
+  animation-duration: 1.5s;
+}
+@keyframes jdimage {
+  from{border-radius: 0px}
+  to{border-radius: 75%}
+}
 .jd-design-salution{
   height: 275px;
   margin:5px;
 }
+.jd-design-content{
+  font-family: 'IBM Plex Sans', sans-serif;
+  color:#fff;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+.jd-design-content h3{}

@@ -43,10 +43,10 @@ module ApplicationHelper
         url: tech_news_path,
         title: 'TechNews'
       },
-      # {
-      #   url: jhall_dev_path,
-      #   title: 'JHallDev'
-      # },
+      {
+        url: jhall_dev_path,
+        title: 'JHallDev'
+      },
     ]
   end
 

@@ -330,7 +330,6 @@ DEPENDENCIES
   sendgrid-ruby
   spring
   spring-watcher-listen (~> 2.0.0)
-  sprockets (~> 3.7, >= 3.7.2)
   tether-rails
   turbolinks (~> 5)
   twitter (~> 6.1)

@@ -397,6 +397,7 @@ parallax
 .blog-layout {
   display: inline-flex;
   margin: 25px;
+  width:95%;
 }
 .blog-posts {
   width: 100%;
@@ -541,12 +542,11 @@ hr {
 */
 .tech-news-layout {
   display: flex;
+  flex-direction: row;
   margin: 25px;
 }
 .tech-news-content {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin:10px;
   background: rgba(255, 255, 255, 0.50);
   padding: 10px;
   border-radius: 10px;
@@ -558,6 +558,16 @@ hr {
   color: #2EB2FF;
   font-family: 'Quicksand', sans-serif;
 }
+.tech-news-heading-title{
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.tech-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 .tweet-container {
   display: flex;
   flex-wrap: wrap;
@@ -566,7 +576,7 @@ hr {
 .tweets {
   width: 200px;
   margin:5px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   background-color: white;
   border: solid 2px #1DA1F2;

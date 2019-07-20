@@ -1,15 +1,40 @@
 <div class='tech-news-title'>
-  <h1>Rails News</h1>
-  <p>Tweets about rails</p>
+  <h1>Tech News</h1>
+  <p>Tweets about Tech</p>
 </div>
 <div class='tech-news-layout'>
   <div class='tech-news-content'>
+      <h2 class='tech-news-heading-title'>Tech</h2>
+      <hr class='tech-hr'>
       <div class='tweet-container'>
-        <% @tweets.each do |tweet| %>
+        <% @tech_tweets.each do |tweet| %>
           <div class='tweets'>
             <%= twitter_parcer tweet %>
           </div>
         <% end %>
       </div>
+    </div>
+    <div class='tech-news-content'>
+      <h2 class='tech-news-heading-title'>Ruby</h2> 
+      <hr class='tech-hr'>
+      <div class='tweet-container'> 
+        <% @ruby_tweets.each do |tweet| %>
+          <div class='tweets'>
+            <%= twitter_parcer tweet %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='tech-news-content'>
+      <h2 class='tech-news-heading-title'>JavaScript</h2>
+      <hr class='tech-hr'>
+      <div class='tweet-container'>
+        <% @js_tweets.each do |tweet| %>
+          <div class='tweets'>
+            <%= twitter_parcer tweet %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

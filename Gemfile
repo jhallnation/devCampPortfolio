@@ -76,6 +76,7 @@ gem 'lodash-rails', '~> 4.17', '>= 4.17.4'
 gem 'ckeditor', '~> 4.2', '>= 4.2.3'
 gem 'sendgrid-ruby'
 gem 'popper_js', '~> 1.12', '>= 1.12.9'
+gem 'rack-cors', '~> 1.0', '>= 1.0.3'
 
 
 ruby '2.4.0'

@@ -70,6 +70,7 @@ private
                                       :body, 
                                       :main_image,
                                       :thumb_image,
+                                      :work_type,
                                       technologies_attributes: [:id, :name, :_destroy]
                                       )
   end

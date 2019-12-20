@@ -25,3 +25,6 @@
 
 # Ignore application.rb
 /config/application.rb
+
+# Ignore jhalldev page
+/app/views/pages/jhall_dev.html.erb

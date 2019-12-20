@@ -16,6 +16,12 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-#I don't want to show my secrets
+# I don't want to show my secrets
 /config/secrets.yml
 .env
+
+# Ignore api controller
+/app/controllers/api_controller.rb
+
+# Ignore application.rb
+/config/application.rb

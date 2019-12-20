@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @js_tweets = SocialTool.js_search
   end
 
-  def jhall_dev
-  end
+  # def jhall_dev
+  # end
 
 end

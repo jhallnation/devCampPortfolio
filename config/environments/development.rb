@@ -11,6 +11,8 @@ Rails.application.configure do
 
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+ config.action_mailer.default_options = {reply_to: 'support@jhallnation.com'}
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

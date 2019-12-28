@@ -65,9 +65,9 @@ Rails.application.configure do
   config.action_mailer.default_options = {reply_to: 'support@jhallnation.com'}
 
   ActionMailer::Base.smtp_settings = {
-  :user_name            => ENV['EMAIL_USERNAME'],
-  :password             => ENV['EMAIL_PASSWORD'],
-  :address              => "smtp.gmail.com",
+  :user_name            => ENV['SENDGRID_USERNAME'],
+  :password             => ENV['SENDGRID_PASSWORD'],
+  :address              => "smtp.sendgrid.net",
   :port                 => 587,
   :enable_starttls_auto => true,
   :authentication       => :plain,

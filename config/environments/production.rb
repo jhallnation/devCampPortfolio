@@ -60,7 +60,7 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'jhallnation.com'}
+  config.action_mailer.default_url_options = { host: 'jhallnation.com', protocol: 'http' }
 
   config.action_mailer.default_options = {reply_to: 'support@jhallnation.com'}
 
@@ -92,9 +92,6 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-
-  config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger::DEBUG
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :api
+  resources :api
 
   mount ActionCable.server => '/cable'
   

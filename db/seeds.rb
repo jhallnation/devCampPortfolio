@@ -25,9 +25,9 @@ end
 
 puts '5 skills created'
 
-8.times do |portfolio_item|
+5.times do |portfolio_item|
   Portfolio.create!(
-    title: "Wait! #{portfolio_item}",
+    title: "Arches #{portfolio_item}",
     subtitle: 'Ruby on Rails',
     body: 'just some stuff',
     main_image: 'http://placehold.it/600x400',
@@ -36,9 +36,9 @@ puts '5 skills created'
     )
 end
 
-1.times do |portfolio_item|
+5.times do |portfolio_item|
   Portfolio.create!(
-    title: "Wait! #{portfolio_item}",
+    title: "Dolomites #{portfolio_item}",
     subtitle: 'Angular',
     body: 'just some stuff',
     main_image: 'http://placehold.it/600x400',

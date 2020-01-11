@@ -25,7 +25,8 @@ module DevCampPortfolio
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'localhost:8000'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '/api/portfolio', headers: :any, methods: [:get, :options]
+        resource '/api/login', headers: :any, methods: [:post, :options], credentials: true, :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/auth' }
       end
     end
 

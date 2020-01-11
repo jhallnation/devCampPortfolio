@@ -24,7 +24,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :api
+  get 'api/portfolio', to: 'api/api_portfolio#portfolio'
+
+  post 'api/login', to: 'api/api_authentication#create'
+
+  # get 'api/logout', to: 'api#destroy'
 
   mount ActionCable.server => '/cable'
   

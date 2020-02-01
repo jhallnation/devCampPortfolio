@@ -1,19 +1,30 @@
 class Api::ApiAuthenticationController < Devise::SessionsController
   skip_before_action :verify_authenticity_token
+  acts_as_token_authentication_handler_for User, fallback: :none
 
   #for user login
 
   def create
     user = User.find_by_email(params[:email])
 
-    puts '##############'
-    puts user.role
-    puts '##############'
-
     if user && user.valid_password?(params[:password]) && user.role == :site_admin
       @current_user = user
+      render json: user.as_json(only: [:email, :authentication_token]), status: :created
     else
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unauthorized
+    end
+  end
+
+  def logged_in
+    if params[:email] === nil
+      render json: { 'logged_in': false }
+    else 
+      user = User.find_by_email(params[:email])
+      if user.authentication_token == request.headers['Authorization']
+        render json: { 'logged_in': true }
+      else
+        render json: { 'logged_in': false }
+      end
     end
   end
   # def create

@@ -8,7 +8,6 @@ class Api::ApiAuthenticationController < Devise::SessionsController
     user = User.find_by_email(params[:email])
 
     if user && user.valid_password?(params[:password]) && user.role == :site_admin
-      @current_user = user
       render json: user.as_json(only: [:email, :authentication_token]), status: :created
     else
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unauthorized
@@ -16,10 +15,11 @@ class Api::ApiAuthenticationController < Devise::SessionsController
   end
 
   def logged_in
-    if params[:email] === nil
+    user = User.find_by_email(request.headers['jhUserEmail'])
+    if user.present? == false
       render json: { 'logged_in': false }
     else 
-      user = User.find_by_email(params[:email])
+      user = User.find_by_email(request.headers['jhUserEmail'])
       if user.authentication_token == request.headers['Authorization']
         render json: { 'logged_in': true }
       else

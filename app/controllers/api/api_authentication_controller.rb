@@ -14,6 +14,7 @@ class Api::ApiAuthenticationController < Devise::SessionsController
     end
   end
 
+  # checked if logged in
   def logged_in
     user = User.find_by_email(request.headers['jhUserEmail'])
     if user.present? == false
@@ -27,21 +28,16 @@ class Api::ApiAuthenticationController < Devise::SessionsController
       end
     end
   end
-  # def create
-  #   @user = User.where(email: params[:email]).first
-  #   puts '#############'
-  #   puts @user.roles
-  #   puts '#############'
-
-  #   if @user&.valid_password?(params[:password]) && @user.site_admin == true
-  #     render json: @user.as_json(only: [:email, :authentication_token]), status: :created
-  #   else
-  #     head(:unauthorized)
-  #   end
-  # end
 
   #to kill user session
-  # def destroy
-  # end
+  def destroy
+    user = User.find_by_email(request.headers['jhUserEmail'])
+    if user.present? == false
+      render json: { errors: { 'email' => ['is invalid'] } }, status: :bad_request
+    else
+      user.reset_authentication_token!
+      render json: { 'logged_in': false }, status: :ok
+    end
+  end
 
 end

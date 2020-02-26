@@ -5,8 +5,9 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100');
 @import url(http://fonts.googleapis.com/css?family=Oswald);
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito:200');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
 
 /*
  * body
@@ -276,7 +277,7 @@
   margin-bottom: 125px !important;
   margin-left: 25px;
   margin-right: 25px;
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
   background-color: rgba(74, 74, 74, 0.50);
   padding: 75px 50px 75px 50px;
@@ -343,7 +344,7 @@ parallax
 .parallax-paragraph-one {
   height: 150px;
   background: rgba(74, 74, 74, 0.75);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-size: 75px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -352,7 +353,7 @@ parallax
 .parallax-paragraphs {
   
   background: rgba(74, 74, 74, 0.75);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-size: 30px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -364,7 +365,7 @@ parallax
 .parallax-paragraph-last {
   height: 300px;
   background: rgba(74, 74, 74, 0.75);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-size: 36px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -391,7 +392,7 @@ parallax
   text-align: center;
   padding: 25px;
   background: rgba(74, 74, 74, 0.50);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
 }
 .blog-layout {
@@ -425,7 +426,7 @@ parallax
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  font-family: arial;
+  font-family: 'Comfortaa', ;
   word-spacing: 2px;
   letter-spacing: 2px;
   line-height: 175%;
@@ -555,7 +556,7 @@ hr {
   text-align: center;
   padding: 25px;
   background: rgba(74, 74, 74, 0.50);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
 }
 .tech-news-heading-title{
@@ -645,7 +646,7 @@ hr {
    text-align: center;
   padding: 25px;
   background: rgba(74, 74, 74, 0.50);
-  color: #2EB2FF;
+  color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
 }
 .portfolio-index-details {

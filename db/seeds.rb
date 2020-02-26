@@ -6,11 +6,12 @@
     )
 end
 
-20.times do |blog|
+10.times do |blog|
   Blog.create!(
-    title: "testing #{blog}",
+    title: "blogs #{blog}",
     body:  'This is just for fun', 
-    topic_id: Topic.last.id
+    topic_id: Topic.last.id,
+    status: 1
   )
 end
 

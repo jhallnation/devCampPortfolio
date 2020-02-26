@@ -28,10 +28,11 @@ Rails.application.routes.draw do
 
   get 'api/portfolio', to: 'api/api_portfolio#portfolio'
 
-  devise_scope :user do
-    post 'api/login', to: 'api/api_authentication#create'
-    get 'api/logged_in', to: 'api/api_authentication#logged_in'
-  end
+  # devise_scope :user do
+  #   post 'api/login', to: 'api/api_authentication#create'
+  #   get 'api/logged_in', to: 'api/api_authentication#logged_in'
+  #   delete 'api/logout', to: 'api/api_authentication#destroy'
+  # end
 
   # get 'api/logout', to: 'api#destroy'
 

@@ -22,14 +22,15 @@ module DevCampPortfolio
     config.eager_load_paths << "#{Rails.root}/lib"
     config.secret_key_base = ENV["SECRET_KEY_BASE"]
 
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins 'localhost:8000'
-        resource '/api/portfolio', headers: :any, methods: [:get, :options]
-        resource '/api/login', headers: :any, methods: [:post, :options], credentials: true, :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/auth' }
-        resource '/api/logged_in', headers: :any, methods: [:get, :options], credentials: true
-      end
-    end
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #     origins 'localhost:8000'
+    #     resource '/api/portfolio', headers: :any, methods: [:get, :options]
+    #     resource '/api/login', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/auth' }
+    #     resource '/api/logged_in', headers: :any, methods: [:get, :options]
+    #     resource '/api/logout', headers: :any, methods: [:delete, :options]
+    #   end
+    # end
 
   end
 end

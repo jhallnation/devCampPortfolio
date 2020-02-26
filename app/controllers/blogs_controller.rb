@@ -10,6 +10,7 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
       @blogs = Blog.published.recent.page(params[:page]).per(5)
+      puts @blogs
     end 
       @page_title = 'My Portfolio Blog'
   end

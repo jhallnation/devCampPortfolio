@@ -31,8 +31,8 @@ puts '5 skills created'
     title: "Arches #{portfolio_item}",
     subtitle: 'Ruby on Rails',
     body: 'just some stuff',
-    main_image: 'http://placehold.it/600x400',
-    thumb_image: 'http://placehold.it/350x250',
+    main_image: 'https://via.placeholder.com/350x250',
+    thumb_image: 'https://via.placeholder.com/350x250',
     work_type: 'Employee'
     )
 end
@@ -42,8 +42,8 @@ end
     title: "Dolomites #{portfolio_item}",
     subtitle: 'Angular',
     body: 'just some stuff',
-    main_image: 'http://placehold.it/600x400',
-    thumb_image: 'http://placehold.it/350x250',
+    main_image: 'https://via.placeholder.com/600x400',
+    thumb_image: 'https://via.placeholder.com/350x250',
     work_type: 'Freelance'
     )
 end

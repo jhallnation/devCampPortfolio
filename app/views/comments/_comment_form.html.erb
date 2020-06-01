@@ -11,4 +11,6 @@
 
     <%= f.submit 'Post Comment', class: 'button' %>
   <% end %>
+<% else %>
+  <h6 class='comment-guestuser'><%= link_to 'Login', new_user_session_path, class: 'comment-login-link' %> to comment</h6>
 <% end %>

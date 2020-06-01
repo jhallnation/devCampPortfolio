@@ -1,12 +1,13 @@
 class Api::ApiAuthenticationController < Devise::SessionsController
   skip_before_action :verify_authenticity_token
+  skip_before_action :verify_signed_out_user, only: :destroy
   acts_as_token_authentication_handler_for User, fallback: :none
 
   #for user login
 
   def create
     user = User.find_by_email(params[:email])
-
+    user.update_attribute(:authentication_token, Devise.friendly_token)
     if user && user.valid_password?(params[:password]) && user.role == :site_admin
       render json: user.as_json(only: [:email, :authentication_token]), status: :created
     else
@@ -31,11 +32,12 @@ class Api::ApiAuthenticationController < Devise::SessionsController
 
   #to kill user session
   def destroy
+    print '######### destroy test ##########'
     user = User.find_by_email(request.headers['jhUserEmail'])
     if user.present? == false
       render json: { errors: { 'email' => ['is invalid'] } }, status: :bad_request
     else
-      user.reset_authentication_token!
+      user.update_attribute(:authentication_token, Devise.friendly_token)
       render json: { 'logged_in': false }, status: :ok
     end
   end

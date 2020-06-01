@@ -6,10 +6,6 @@ class Api::ApiPortfolioController < ApplicationController
     @portfolio_items = Portfolio.order('created_at DESC')
 
     render json: @portfolio_items
-
-    print '###################################'
-    print @portfolio_items[0].subtitle
-    print '###################################'
   end
 
   # private

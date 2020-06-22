@@ -26,10 +26,15 @@ module DevCampPortfolio
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'localhost:8000'
-        resource '/api/portfolio', headers: :any, methods: [:get, :options]
+
+        #authentication
         resource '/api/login', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/auth' }
         resource '/api/logged_in', headers: :any, methods: [:get, :options]
         resource '/api/logout', headers: :any, methods: [:delete, :options]
+
+        # portfolio
+        resource '/api/portfolio', headers: :any, methods: [:get, :options]
+        resource 'api/portfolio/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/portfolio-manager' }
       end
     end
 

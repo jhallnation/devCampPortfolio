@@ -21,7 +21,6 @@ class Api::ApiAuthenticationController < Devise::SessionsController
     if user.present? == false
       render json: { 'logged_in': false }
     else 
-      user = User.find_by_email(request.headers['jhUserEmail'])
       if user.authentication_token == request.headers['Authorization']
         render json: { 'logged_in': true }
       else

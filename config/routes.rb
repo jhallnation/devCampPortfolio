@@ -24,10 +24,13 @@ Rails.application.routes.draw do
     end
   end
 
-  # api routes
+  # API ROUTES
 
+  # api portfolio routes
   get 'api/portfolio', to: 'api/api_portfolio#portfolio'
+  post 'api/portfolio/new', to: 'api/api_portfolio#new'
 
+  #api authentication routes
   devise_scope :user do
     post 'api/login', to: 'api/api_authentication#create'
     get 'api/logged_in', to: 'api/api_authentication#logged_in'
@@ -35,6 +38,8 @@ Rails.application.routes.draw do
   end
 
   get 'api/logout', to: 'api#destroy'
+
+  # END OF API ROUTES
 
   mount ActionCable.server => '/cable'
   

@@ -1,6 +1,7 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
-  # before_action :require_login, only: [:destroy, :new, :create, :update, :edit]
+  before_action :require_login, only: [:destroy, :new, :create, :update, :edit]
+
   # GET /portfolio
   def portfolio
     @portfolio_items = Portfolio.order('created_at DESC')
@@ -8,11 +9,23 @@ class Api::ApiPortfolioController < ApplicationController
     render json: @portfolio_items
   end
 
-  # private
+  def new
+    puts '###new###'
+  end
+
+  private
  
-  # def require_login
-  #   unless logged_in?
-  #     need to decide error message to respond and in react if it will redirect to error page, index, or display message on screen
-  #   end
-  # end
+  def require_login
+    puts '#######require_login############'
+    user = User.find_by_email(request.headers['jhUserEmail'])
+    if user.present? == false
+      render json: { 'logged_in': false }
+    else 
+      if user.authentication_token == request.headers['Authorization']
+        return true
+      else
+        render json: { 'logged_in': false }
+      end
+    end
+  end
 end

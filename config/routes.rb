@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   # api portfolio routes
   get 'api/portfolio', to: 'api/api_portfolio#portfolio'
-  post 'api/portfolio/new', to: 'api/api_portfolio#new'
+  post 'api/portfolio/new', to: 'api/api_portfolio#create'
 
   #api authentication routes
   devise_scope :user do

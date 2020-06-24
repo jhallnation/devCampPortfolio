@@ -1,6 +1,6 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:destroy, :new, :create, :update, :edit]
+  before_action :require_login, only: [:destroy, :create, :update, :edit]
 
   # GET /portfolio
   def portfolio
@@ -9,8 +9,14 @@ class Api::ApiPortfolioController < ApplicationController
     render json: @portfolio_items
   end
 
-  def new
-    puts '###new###'
+  def create
+    @portfolio_item = Portfolio.new(portfolio_params)
+
+    if @portfolio_item.save
+      render json: { 'new_portfolio': true }
+    else
+      render json: { 'new_portfolio': false }
+    end
   end
 
   private
@@ -27,5 +33,16 @@ class Api::ApiPortfolioController < ApplicationController
         render json: { 'logged_in': false }
       end
     end
+  end
+
+  def portfolio_params
+    params.require(:portfolios).permit(:title, 
+                                       :subtitle, 
+                                       :body, 
+                                       :main_image,
+                                       :thumb_image,
+                                       :work_type,
+                                       technologies_attributes: [:id, :name, :_destroy]
+                                       )
   end
 end

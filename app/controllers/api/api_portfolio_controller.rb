@@ -1,5 +1,6 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :set_portfolio, only: [:edit, :update, :destroy]
   before_action :require_login, only: [:destroy, :create, :update, :edit]
 
   # GET /portfolio
@@ -16,6 +17,14 @@ class Api::ApiPortfolioController < ApplicationController
       render json: { 'new_portfolio': true }
     else
       render json: { 'new_portfolio': false }
+    end
+  end
+
+  def destroy
+    if @portfolio_item.destroy
+      render json: { 'delete_portfolio': true }
+    else
+      render json: { 'delete_portfolio': false }
     end
   end
 
@@ -44,5 +53,9 @@ class Api::ApiPortfolioController < ApplicationController
                                        :work_type,
                                        technologies_attributes: [:id, :name, :_destroy]
                                        )
+  end
+
+  def set_portfolio
+    @portfolio_item = Portfolio.find(request.headers['portfolioItemID'])
   end
 end

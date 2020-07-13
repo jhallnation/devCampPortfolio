@@ -34,8 +34,9 @@ module DevCampPortfolio
 
         # portfolio
         resource '/api/portfolio', headers: :any, methods: [:get, :options]
-        resource '/api/portfolio/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/portfolio-manager' }
+        resource '/api/portfolio/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
         resource '/api/portfolio/delete', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/portfolio-manager' }
+        resource '/api/portfolio/edit', headers: :any, methods: [:patch, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
       end
     end
 

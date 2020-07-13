@@ -1,7 +1,7 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_portfolio, only: [:edit, :update, :destroy]
   before_action :require_login, only: [:destroy, :create, :update, :edit]
+  before_action :set_portfolio, only: [:update, :destroy]
 
   # GET /portfolio
   def portfolio
@@ -25,6 +25,14 @@ class Api::ApiPortfolioController < ApplicationController
       render json: { 'delete_portfolio': true }
     else
       render json: { 'delete_portfolio': false }
+    end
+  end
+
+  def update
+    if @portfolio_item.update(portfolio_params)
+      render json: { 'edit_portfolio': true }
+    else
+      render json: { 'edit_portfolio': false }
     end
   end
 

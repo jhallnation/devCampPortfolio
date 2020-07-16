@@ -31,7 +31,6 @@ class Api::ApiAuthenticationController < Devise::SessionsController
 
   #to kill user session
   def destroy
-    print '######### destroy test ##########'
     user = User.find_by_email(request.headers['jhUserEmail'])
     if user.present? == false
       render json: { errors: { 'email' => ['is invalid'] } }, status: :bad_request

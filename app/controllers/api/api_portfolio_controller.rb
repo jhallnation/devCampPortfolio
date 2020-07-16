@@ -39,7 +39,6 @@ class Api::ApiPortfolioController < ApplicationController
   private
  
   def require_login
-    puts '#######require_login############'
     user = User.find_by_email(request.headers['jhUserEmail'])
     if user.present? == false
       render json: { 'logged_in': false }
@@ -58,7 +57,9 @@ class Api::ApiPortfolioController < ApplicationController
                                        :body, 
                                        :main_image,
                                        :thumb_image,
+                                       :logo,
                                        :work_type,
+                                       :url,
                                        technologies_attributes: [:id, :name, :_destroy]
                                        )
   end

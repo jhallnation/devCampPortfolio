@@ -723,6 +723,11 @@ hr {
   font-size: 20px;
   font-family: 'Quicksand', sans-serif;
 }
+
+.image-upload-links {
+  display: flex;
+  flex-direction: column;
+}
 /*
 * blog/portfolio forms
 */

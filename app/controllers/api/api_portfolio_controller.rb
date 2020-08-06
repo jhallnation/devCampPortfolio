@@ -1,7 +1,7 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:destroy, :create, :update, :edit]
-  before_action :set_portfolio, only: [:update, :destroy]
+  before_action :require_login, only: [:destroy, :create, :update, :edit, :destroy_image]
+  before_action :set_portfolio, only: [:update, :destroy, :destroy_image]
 
   # GET /portfolio
   def portfolio
@@ -14,9 +14,9 @@ class Api::ApiPortfolioController < ApplicationController
     @portfolio_item = Portfolio.new(portfolio_params)
 
     if @portfolio_item.save
-      render json: { 'new_portfolio': true }
+      render json: { 'new_edit_portfolio': true }
     else
-      render json: { 'new_portfolio': false }
+      render json: { 'new_edit_portfolio': false }
     end
   end
 
@@ -30,10 +30,29 @@ class Api::ApiPortfolioController < ApplicationController
 
   def update
     if @portfolio_item.update(portfolio_params)
-      render json: { 'edit_portfolio': true }
+      render json: { 'new_edit_portfolio': true }
     else
-      render json: { 'edit_portfolio': false }
+      render json: { 'new_edit_portfolio': false }
     end
+  end
+
+  def destroy_image
+    if request.headers['imageToDelete'] == 'thumb_image'
+      puts 'thumb_image'
+    elsif request.headers['imageToDelete'] == 'main_image'
+      puts 'main_image'
+    elsif request.headers['imageToDelete'] == 'logo'
+      puts 'logo'
+    else
+      puts 'no image'
+    end
+
+    # puts @portfolio_item[@image_to_delete]
+    # @portfolio_item.remove_
+    # puts @portfolio_item.inspect
+    # puts request.headers['imageToDelete']
+
+    render json: {'delete_image_portfolio': true}
   end
 
   private

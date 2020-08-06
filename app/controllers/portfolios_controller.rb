@@ -2,6 +2,7 @@ class PortfoliosController < ApplicationController
 layout 'portfolio'
   before_action :set_portfolio, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
+
   def index
     @portfolio_items = Portfolio.page(params[:page]).per(1)
   end
@@ -53,12 +54,18 @@ layout 'portfolio'
 
   def destroy
 
+    #To remove images from s3
+    @portfolio_item.remove_thumb_image
+    @portfolio_item.remove_main_image
+    @portfolio_item.remove_logo
+
     @portfolio_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully removed.' }
     end
   end
-private
+
+  private
 
   def set_portfolio
     @portfolio_item = Portfolio.find(params[:id])
@@ -73,6 +80,9 @@ private
                                       :logo,
                                       :work_type,
                                       :url,
+                                      :remove_main_image,
+                                      :remove_thumb_image,
+                                      :remove_logo,
                                       technologies_attributes: [:id, :name, :_destroy]
                                       )
   end

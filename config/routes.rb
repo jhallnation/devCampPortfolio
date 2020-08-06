@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   post 'api/portfolio/new', to: 'api/api_portfolio#create'
   delete 'api/portfolio/delete', to: 'api/api_portfolio#destroy'
   patch 'api/portfolio/edit', to: 'api/api_portfolio#update'
+  delete 'api/portfolio/delete-image', to: 'api/api_portfolio#destroy_image'
 
   #api authentication routes
   devise_scope :user do

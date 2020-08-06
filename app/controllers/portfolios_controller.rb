@@ -55,9 +55,9 @@ layout 'portfolio'
   def destroy
 
     #To remove images from s3
-    @portfolio_item.remove_thumb_image
-    @portfolio_item.remove_main_image
-    @portfolio_item.remove_logo
+    @portfolio_item.remove_thumb_image!
+    @portfolio_item.remove_main_image!
+    @portfolio_item.remove_logo!
 
     @portfolio_item.destroy
     respond_to do |format|

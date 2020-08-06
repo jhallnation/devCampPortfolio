@@ -38,6 +38,10 @@ module DevCampPortfolio
         resource '/api/portfolio/delete', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/portfolio-manager' }
         resource '/api/portfolio/edit', headers: :any, methods: [:patch, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
         resource '/api/portfolio/delete-image', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
+
+        #blog
+        resource '/api/blog', headers: :any, methods: [:get, :options]
+        resource '/api/blog/post', headers: :any, methods: [:get, :options]
       end
     end
 

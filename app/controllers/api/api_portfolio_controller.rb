@@ -21,6 +21,11 @@ class Api::ApiPortfolioController < ApplicationController
   end
 
   def destroy
+    #To remove images from s3
+    @portfolio_item.remove_thumb_image!
+    @portfolio_item.remove_main_image!
+    @portfolio_item.remove_logo!
+
     if @portfolio_item.destroy
       render json: { 'delete_portfolio': true }
     else
@@ -38,21 +43,20 @@ class Api::ApiPortfolioController < ApplicationController
 
   def destroy_image
     if request.headers['imageToDelete'] == 'thumb_image'
-      puts 'thumb_image'
+      @portfolio_item.remove_thumb_image!
+      @portfolio_item.save
+      render json: { 'delete_portfolio_image': true }
     elsif request.headers['imageToDelete'] == 'main_image'
-      puts 'main_image'
+      @portfolio_item.remove_main_image!
+      @portfolio_item.save
+      render json: { 'delete_portfolio_image': true }
     elsif request.headers['imageToDelete'] == 'logo'
-      puts 'logo'
+      @portfolio_item.remove_logo!
+      @portfolio_item.save
+      render json: { 'delete_portfolio_image': true }
     else
-      puts 'no image'
+      render json: { 'delete_portfolio_image': false }
     end
-
-    # puts @portfolio_item[@image_to_delete]
-    # @portfolio_item.remove_
-    # puts @portfolio_item.inspect
-    # puts request.headers['imageToDelete']
-
-    render json: {'delete_image_portfolio': true}
   end
 
   private
@@ -79,6 +83,9 @@ class Api::ApiPortfolioController < ApplicationController
                                        :logo,
                                        :work_type,
                                        :url,
+                                       :remove_main_image,
+                                       :remove_thumb_image,
+                                       :remove_logo,
                                        technologies_attributes: [:id, :name, :_destroy]
                                        )
   end

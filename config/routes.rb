@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   patch 'api/portfolio/edit', to: 'api/api_portfolio#update'
   delete 'api/portfolio/delete-image', to: 'api/api_portfolio#destroy_image'
 
+  #blog
+  get 'api/blog', to: 'api/api_blog#blog'
+  get 'api/blog/post', to: 'api/api_blog#blog_post'
+
   #api authentication routes
   devise_scope :user do
     post 'api/login', to: 'api/api_authentication#create'

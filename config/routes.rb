@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   #blog
   get 'api/blog', to: 'api/api_blog#blog'
   get 'api/blog/post', to: 'api/api_blog#blog_post'
+  post 'api/blog/new', to: 'api/api_blog#create'
 
   #api authentication routes
   devise_scope :user do

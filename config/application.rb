@@ -42,6 +42,7 @@ module DevCampPortfolio
         #blog
         resource '/api/blog', headers: :any, methods: [:get, :options]
         resource '/api/blog/post', headers: :any, methods: [:get, :options]
+        resource '/api/blog/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog')}
       end
     end
 

@@ -5,8 +5,10 @@
     <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
     <%= link_to 'Blogs', blogs_path, :class => 'links' %>
     <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
-    <%= link_to "#{@blog.topic.title}", topic_path(@blog.topic), :class => 'links' %>
+    <% if @blog.topic %>
+      <%= link_to "#{@blog.topic.title}", topic_path(@blog.topic), :class => 'links' %>
      <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
+    <% end %>
     <span class='blog-title-bcrumb'><%= @blog.title %></span>
 
     <div>
@@ -17,7 +19,9 @@
   <div class='blog-body'>
     <h2 class='blog-title'><%= @blog.title %></h2>
 
-    <h4 class='topic-title'><%= @blog.topic.title %></h4>
+    <% if @blog.topic %>
+      <h4 class='topic-title'><%= @blog.topic.title %></h4>
+    <% end %>
 
     <div class='blog-text'>
       <%= raw @blog.body %>

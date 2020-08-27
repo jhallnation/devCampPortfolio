@@ -40,7 +40,7 @@ class Api::ApiBlogController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body, :topic_id, :status)
+    params.require(:blog).permit(:title, :body, :topic_id, :status, :main_image)
   end
 
   def set_portfolio

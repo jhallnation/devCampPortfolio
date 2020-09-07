@@ -36,7 +36,10 @@ Rails.application.routes.draw do
   #blog
   get 'api/blog', to: 'api/api_blog#blog'
   get 'api/blog/post', to: 'api/api_blog#blog_post'
+  delete 'api/blog/delete', to: 'api/api_blog#destroy'
   post 'api/blog/new', to: 'api/api_blog#create'
+  patch 'api/blog/edit', to: 'api/api_blog#update'
+  delete 'api/blog/delete-image', to: 'api/api_blog#destroy_image'
 
   #api authentication routes
   devise_scope :user do

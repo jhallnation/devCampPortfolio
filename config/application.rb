@@ -43,6 +43,9 @@ module DevCampPortfolio
         resource '/api/blog', headers: :any, methods: [:get, :options]
         resource '/api/blog/post', headers: :any, methods: [:get, :options]
         resource '/api/blog/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog')}
+        resource '/api/blog/delete', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/blog-posts' }
+        resource '/api/blog/edit', headers: :any, methods: [:patch, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog-post')}
+        resource '/api/blog/delete-image', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog-post')}
       end
     end
 

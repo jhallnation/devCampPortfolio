@@ -1,6 +1,6 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:destroy, :create, :update, :edit, :destroy_image]
+  before_action :require_login, only: [:destroy, :create, :update, :destroy_image]
   before_action :set_portfolio, only: [:update, :destroy, :destroy_image]
 
   # GET /portfolio

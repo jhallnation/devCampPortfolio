@@ -1,7 +1,7 @@
 class Api::ApiBlogController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:create]
-  before_action :set_portfolio, only: [:blog_post]
+  before_action :require_login, only: [:destroy, :create, :update, :destroy_image]
+  before_action :set_blog, only: [:blog_post, :update, :destroy, :destroy_image]
 
   # GET /blog
   def blog
@@ -11,7 +11,7 @@ class Api::ApiBlogController < ApplicationController
   end
 
   def blog_post
-    render json: @blog_post
+    render json: @blog
   end
 
   def create
@@ -21,6 +21,35 @@ class Api::ApiBlogController < ApplicationController
       render json: { 'new_edit_blog': true }
     else
       render json: { 'new_edit_blog': false }
+    end
+  end
+
+  def destroy
+    #To remove images from s3
+    @blog.remove_main_image!
+
+    if @blog.destroy
+      render json: { 'delete_blog_post': true }
+    else
+      render json: { 'delete_blog_post': false }
+    end
+  end
+
+  def update
+    if @blog.update(blog_params)
+      render json: { 'new_edit_portfolio': true, 'blog': @blog }
+    else
+      render json: { 'new_edit_portfolio': false }
+    end
+  end
+
+  def destroy_image
+    if request.headers['imageToDelete'] == 'main_image'
+      @blog.remove_main_image!
+      @blog.save
+      render json: { 'delete_blog_image': true }
+    else
+      render json: { 'delete_blog_image': false }
     end
   end
 
@@ -43,7 +72,7 @@ class Api::ApiBlogController < ApplicationController
     params.require(:blog).permit(:title, :body, :topic_id, :status, :main_image)
   end
 
-  def set_portfolio
-    @blog_post = Blog.find(request.headers['blogPostID'])
+  def set_blog
+    @blog = Blog.find(request.headers['blogPostID'])
   end
 end

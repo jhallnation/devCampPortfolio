@@ -37,9 +37,9 @@ class Api::ApiBlogController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      render json: { 'new_edit_portfolio': true, 'blog': @blog }
+      render json: { 'new_edit_blog': true, 'blog': @blog }
     else
-      render json: { 'new_edit_portfolio': false }
+      render json: { 'new_edit_blog': false }
     end
   end
 

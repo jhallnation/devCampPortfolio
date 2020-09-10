@@ -1,13 +1,17 @@
 class Api::ApiPortfolioController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :require_login, only: [:destroy, :create, :update, :destroy_image]
-  before_action :set_portfolio, only: [:update, :destroy, :destroy_image]
+  before_action :set_portfolio, only: [:portfolio_item, :update, :destroy, :destroy_image]
 
   # GET /portfolio
   def portfolio
     @portfolio_items = Portfolio.order('created_at DESC')
 
     render json: @portfolio_items
+  end
+
+  def portfolio_item
+    render json: @portfolio_item
   end
 
   def create

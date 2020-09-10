@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   # api portfolio routes
   get 'api/portfolio', to: 'api/api_portfolio#portfolio'
+  get 'api/portfolio/item', to: 'api/api_portfolio#portfolio_item'
   post 'api/portfolio/new', to: 'api/api_portfolio#create'
   delete 'api/portfolio/delete', to: 'api/api_portfolio#destroy'
   patch 'api/portfolio/edit', to: 'api/api_portfolio#update'

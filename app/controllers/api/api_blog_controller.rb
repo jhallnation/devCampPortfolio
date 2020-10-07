@@ -29,9 +29,9 @@ class Api::ApiBlogController < ApplicationController
     @blog.remove_main_image!
 
     if @blog.destroy
-      render json: { 'delete_blog_post': true }
+      render json: { 'delete_blog': true }
     else
-      render json: { 'delete_blog_post': false }
+      render json: { 'delete_blog': false }
     end
   end
 

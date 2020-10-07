@@ -28,25 +28,25 @@ module DevCampPortfolio
         origins 'localhost:8000'
 
         #authentication
-        resource '/api/login', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/auth' }
+        resource '/api/login', headers: :any, methods: [:post, :options]
         resource '/api/logged_in', headers: :any, methods: [:get, :options]
         resource '/api/logout', headers: :any, methods: [:delete, :options]
 
         # portfolio
         resource '/api/portfolio', headers: :any, methods: [:get, :options]
         resource '/api/portfolio/item', headers: :any, methods: [:get, :options]
-        resource '/api/portfolio/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
-        resource '/api/portfolio/delete', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/portfolio-manager' }
-        resource '/api/portfolio/edit', headers: :any, methods: [:patch, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
-        resource '/api/portfolio/delete-image', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/portfolio-manager')}
+        resource '/api/portfolio/new', headers: :any, methods: [:post, :options]
+        resource '/api/portfolio/delete', headers: :any, methods: [:delete, :options]
+        resource '/api/portfolio/edit', headers: :any, methods: [:patch, :options]
+        resource '/api/portfolio/delete-image', headers: :any, methods: [:delete, :options]
 
         #blog
         resource '/api/blog', headers: :any, methods: [:get, :options]
         resource '/api/blog/post', headers: :any, methods: [:get, :options]
-        resource '/api/blog/new', headers: :any, methods: [:post, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog')}
-        resource '/api/blog/delete', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'] == 'http://localhost:8000/blog-posts' }
-        resource '/api/blog/edit', headers: :any, methods: [:patch, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog-post')}
-        resource '/api/blog/delete-image', headers: :any, methods: [:delete, :options], :if => proc { |env| env['HTTP_REFERER'].include?('http://localhost:8000/blog-post')}
+        resource '/api/blog/new', headers: :any, methods: [:post, :options]
+        resource '/api/blog/delete', headers: :any, methods: [:delete, :options]
+        resource '/api/blog/edit', headers: :any, methods: [:patch, :options]
+        resource '/api/blog/delete-image', headers: :any, methods: [:delete, :options]
       end
     end
 

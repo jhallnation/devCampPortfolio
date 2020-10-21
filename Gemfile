@@ -80,4 +80,4 @@ gem 'rack-cors', '~> 1.0', '>= 1.0.3'
 gem 'simple_token_authentication', '~> 1.17'
 
 
-ruby '2.6.1'
+ruby '2.6.3'

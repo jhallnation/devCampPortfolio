@@ -42,6 +42,9 @@ Rails.application.routes.draw do
   patch 'api/blog/edit', to: 'api/api_blog#update'
   delete 'api/blog/delete-image', to: 'api/api_blog#destroy_image'
 
+  #sports blog
+  get 'api/sports-blogs', to: 'api/api_sports_blog#sports_blog'
+
   #api authentication routes
   devise_scope :user do
     post 'api/login', to: 'api/api_authentication#create'

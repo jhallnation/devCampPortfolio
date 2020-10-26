@@ -43,7 +43,8 @@ Rails.application.routes.draw do
   delete 'api/blog/delete-image', to: 'api/api_blog#destroy_image'
 
   #sports blog
-  get 'api/sports-blogs', to: 'api/api_sports_blog#sports_blog'
+  get 'api/sports-blog', to: 'api/api_sports_blog#sports_blog'
+  post 'api/sports-blog/new', to: 'api/api_sports_blog#create'
 
   #api authentication routes
   devise_scope :user do

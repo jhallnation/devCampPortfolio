@@ -1,6 +1,6 @@
 class Api::ApiSportsBlogController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:destroy, :create, :update, :destroy_image]
+  before_action :require_login, only: [:destroy, :update, :destroy_image]
   before_action :set_blog, only: [:sports_blog_post, :update, :destroy, :destroy_image]
 
   # GET /blog
@@ -18,9 +18,9 @@ class Api::ApiSportsBlogController < ApplicationController
     @blog = SportsBlog.new(blog_params)
 
     if @blog.save
-      render json: { 'new_edit_blog': true }
+      render json: { 'new_blog': true }
     else
-      render json: { 'new_edit_blog': false }
+      render json: { 'new_blog': false }
     end
   end
 
@@ -37,9 +37,9 @@ class Api::ApiSportsBlogController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      render json: { 'new_edit_blog': true, 'blog': @blog }
+      render json: { 'edit_blog': true, 'blog': @blog }
     else
-      render json: { 'new_edit_blog': false }
+      render json: { 'edit_blog': false }
     end
   end
 

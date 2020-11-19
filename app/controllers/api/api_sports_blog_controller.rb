@@ -18,9 +18,9 @@ class Api::ApiSportsBlogController < ApplicationController
     @blog = SportsBlog.new(blog_params)
 
     if @blog.save
-      render json: { 'new_blog': true }
+      render json: { 'new_edit_blog': true }
     else
-      render json: { 'new_blog': false }
+      render json: { 'new_edit_blog': false }
     end
   end
 
@@ -37,9 +37,9 @@ class Api::ApiSportsBlogController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      render json: { 'edit_blog': true, 'blog': @blog }
+      render json: { 'new_edit_blog': true, 'blog': @blog }
     else
-      render json: { 'edit_blog': false }
+      render json: { 'new_edit_blog': false }
     end
   end
 

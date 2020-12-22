@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   #sports blog
   get 'api/sports-blog', to: 'api/api_sports_blog#sports_blog'
   get 'api/sports-blog/post', to: 'api/api_sports_blog#sports_blog_post'
-  delete 'api/sports_blog/delete', to: 'api/api_sports_blog#destroy'
+  delete 'api/sports-blog/delete', to: 'api/api_sports_blog#destroy'
   post 'api/sports-blog/new', to: 'api/api_sports_blog#create'
   patch 'api/sports-blog/edit', to: 'api/api_sports_blog#update'
   delete 'api/sports-blog/delete-image', to: 'api/api_sports_blog#destroy_image'

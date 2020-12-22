@@ -1,6 +1,6 @@
 class Api::ApiSportsBlogController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login, only: [:destroy, :create, :update, :destroy_image]
+  before_action :require_login, only: [ :create, :update, :destroy_image]
   before_action :set_blog, only: [:sports_blog_post, :update, :destroy, :destroy_image]
 
   # GET /blog
@@ -26,7 +26,7 @@ class Api::ApiSportsBlogController < ApplicationController
 
   def destroy
     #To remove images from s3
-    @blog.remove_main_image!
+    # @blog.remove_main_image!
 
     if @blog.destroy
       render json: { 'delete_blog': true }

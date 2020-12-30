@@ -7,8 +7,8 @@ class Api::ApiAuthenticationController < Devise::SessionsController
 
   def create
     user = User.find_by_email(params[:email])
-    user.update_attribute(:authentication_token, Devise.friendly_token)
     if user && user.valid_password?(params[:password]) && user.role == :site_admin
+      user.update_attribute(:authentication_token, Devise.friendly_token)
       render json: user.as_json(only: [:email, :authentication_token]), status: :created
     else
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unauthorized
